@@ -124,6 +124,13 @@ def request_api(api_url):
 
 request_api(saral_api_url)
 
+def previous_next():
+	if number >=0:
+		check = course_id_list[number]
+		print(course_dic[check])
+		child_exe(check)
+	else:
+		print("Course is not available")
 
 while True:
 	print("")
@@ -135,19 +142,9 @@ while True:
 		request_api(saral_api_url)
 	elif choice == 'P':
 		number = user_choice_list[-1]-1
-		if number >=0:
-			check = course_id_list[number]
-			print(course_dic[check])
-			child_exe(check)
-		else:
-			print("Course is not available")
+		previous_next()
 	elif choice == 'N':
 		number = user_choice_list[-1]+1
-		if number >=0:
-			check = course_id_list[number]
-			print(course_dic[check])
-			child_exe(check)
-		else:
-			print("Course is not available")
+		previous_next()
 	else:
 		print("Enter the correct choice")
